@@ -41,10 +41,6 @@ class MapProfileService implements iAgentMapProfile, iTeamManagerMapProfile
     {
         try {
             $result = $this->getState($mapProfile)->start($mapProfile);
-        } catch (NotFoundHttpException $exc) {
-            throw new NotFoundHttpException($exc->getMessage());
-        } catch (ServerErrorHttpException $exc) {
-            throw new NotFoundHttpException($exc->getMessage());
         } catch (Exception $exc) {
             throw new NotFoundHttpException('Unexpected error while processing Map Profile.');
         }
@@ -56,10 +52,6 @@ class MapProfileService implements iAgentMapProfile, iTeamManagerMapProfile
     {
         try {
             $result = $this->getState($mapProfile)->complete($mapProfile);
-        } catch (NotFoundHttpException $exc) {
-            throw new NotFoundHttpException($exc->getMessage());
-        } catch (ServerErrorHttpException $exc) {
-            throw new NotFoundHttpException($exc->getMessage());
         } catch (Exception $exc) {
             throw new NotFoundHttpException('Unexpected error while processing Map Profile.');
         }
@@ -71,25 +63,6 @@ class MapProfileService implements iAgentMapProfile, iTeamManagerMapProfile
     {
         try {
             $result = $this->getState($mapProfile)->addToList($mapProfile, $teamId);
-        } catch (NotFoundHttpException $exc) {
-            throw new NotFoundHttpException($exc->getMessage());
-        } catch (ServerErrorHttpException $exc) {
-            throw new NotFoundHttpException($exc->getMessage());
-        } catch (Exception $exc) {
-            throw new NotFoundHttpException('Unexpected error while processing Map Profile.');
-        }
-
-        return $result;
-    }
-
-    public function removeFromList(MapProfile $mapProfile, $teamId = null)
-    {
-        try {
-            $result = $this->getState($mapProfile)->removeFromList($mapProfile, $teamId);
-        } catch (NotFoundHttpException $exc) {
-            throw new NotFoundHttpException($exc->getMessage());
-        } catch (ServerErrorHttpException $exc) {
-            throw new NotFoundHttpException($exc->getMessage());
         } catch (Exception $exc) {
             throw new NotFoundHttpException('Unexpected error while processing Map Profile.');
         }
@@ -101,25 +74,6 @@ class MapProfileService implements iAgentMapProfile, iTeamManagerMapProfile
     {
         try {
             $result = $this->getState($mapProfile)->assign($mapProfile, $userId);
-        } catch (NotFoundHttpException $exc) {
-            throw new NotFoundHttpException($exc->getMessage());
-        } catch (ServerErrorHttpException $exc) {
-            throw new NotFoundHttpException($exc->getMessage());
-        } catch (Exception $exc) {
-            throw new NotFoundHttpException('Unexpected error while processing Map Profile.');
-        }
-
-        return $result;
-    }
-
-    public function unassign(MapProfile $mapProfile, $userId)
-    {
-        try {
-            $result = $this->getState($mapProfile)->unassign($mapProfile, $userId);
-        } catch (NotFoundHttpException $exc) {
-            throw new NotFoundHttpException($exc->getMessage());
-        } catch (ServerErrorHttpException $exc) {
-            throw new NotFoundHttpException($exc->getMessage());
         } catch (Exception $exc) {
             throw new NotFoundHttpException('Unexpected error while processing Map Profile.');
         }
@@ -131,10 +85,6 @@ class MapProfileService implements iAgentMapProfile, iTeamManagerMapProfile
     {
         try {
             $result = $this->getState($mapProfile)->prepare($mapProfile);
-        } catch (NotFoundHttpException $exc) {
-            throw new NotFoundHttpException($exc->getMessage());
-        } catch (ServerErrorHttpException $exc) {
-            throw new NotFoundHttpException($exc->getMessage());
         } catch (Exception $exc) {
             throw new NotFoundHttpException('Unexpected error while processing Map Profile.');
         }

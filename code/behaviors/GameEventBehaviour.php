@@ -2,9 +2,6 @@
 
 namespace common\behaviors;
 
-use frontend\modules\v1\controllers\DashboardController;
-use frontend\modules\v1\controllers\MapProfilesController;
-use frontend\modules\v1\controllers\ReportController;
 use frontend\modules\v1\models\gamification\event\GameActionEvent;
 use frontend\modules\v1\models\gamification\event\GamificationEvent;
 use yii\base\Behavior;
